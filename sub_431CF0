@@ -1,0 +1,25 @@
+# Tenda router sub_431CF0 function stack overflow vulnerability
+
+> vendor:Tenda
+>
+> product:AX12
+>
+> version:v1.0 v22.03.01.16
+>
+> type:Stack Overflow
+
+## Vulnerability Description
+
+Tenda AX12 v1.0 v22.03.01.16 were discovered to contain a stack overflow via the ssid parameter in the sub_431CF0 function.
+
+## Vulnerability Details
+
+In the function, V2 obtains the variable named "ssid" in the web request and passes it directly to the sprintf function without processing, which may cause a stack buffer overflow based on V19. Therefore, by requesting this page, an attacker can leverage crafted spill data to perform a denial of service attack.
+
+
+
+
+## POC
+
+
+    rn = b'\r\
